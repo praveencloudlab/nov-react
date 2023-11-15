@@ -1,0 +1,46 @@
+React js
+----------
+1.Java script (basics)
+2.HTML5 and CSS (master)
+3.Web technologies
+
+TOC
+--------
+-> components
+-> component communication
+-> hooks in react js
+-> state and props
+-> Forms
+-> server side communications using rest calls : 
+-> routers
+-> redux (optional)
+
+===================================
+
+
+Lab/Software
+===============
+1.VS code editor / Intllij IDEA
+2.database : mysql8
+3.Chrome browser
+4.Node JS
+
+
+Next JS
+==========
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
