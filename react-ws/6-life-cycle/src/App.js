@@ -18,7 +18,15 @@ const App = () => {
 
   useEffect(()=>{
     console.log(">>1- useEffect - only once");
+   
   },[]);
+
+  useEffect(()=>{
+    console.log(">>clearn up code before unmound");
+    return()=>{
+      console.log(">> Some Component is Unmounted/removed");
+    }
+  },[status]);
 
   useEffect(()=>{
     console.log(">>useEffect-every time any state.");
@@ -32,11 +40,7 @@ const App = () => {
     console.log(">>useEffect- oddNumber updated.");
   },[oddNumber])
 
-  useEffect(()=>{
-    return()=>{
-      console.log(">> Some Component is Unmounted/removed");
-    }
-  },[])
+
 
   useEffect(()=>{
     console.log(">>useEffect- oddNumber/evenNumber updated.");
