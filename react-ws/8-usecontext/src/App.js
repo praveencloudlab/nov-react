@@ -13,6 +13,8 @@ const App = () => {
          <ComponentA/>
          <ComponentB/>
       </MyProvider>
+
+      
       
     </div>
   );
