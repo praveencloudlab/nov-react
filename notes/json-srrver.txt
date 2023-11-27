@@ -1,0 +1,27 @@
+Promise api.      : then 
+----------------
+-> axios 
+
+
+obsorvable api.   : subcribe
+-----------------
+
+json server
+==============
+
+npm i json-server -g
+
+
+{
+	"products":[{},{},{},{}],
+	"users":[{},{},{}],
+	"cart":[{}.{},{}]
+}
+
+save above file as "db.json"
+json-server db.json --watch --port=8080
+
+
+
+
+
