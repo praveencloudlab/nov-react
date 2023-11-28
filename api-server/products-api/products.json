@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "iPad 11th Gen",
+      "price": "145000",
+      "description": "512 GB",
+      "id": 1
+    },
+    {
+      "name": "Laptop",
+      "price": "45000",
+      "description": "Dell",
+      "id": 57
+    }
+  ]
+}
