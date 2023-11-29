@@ -14,15 +14,15 @@ const Home = () => {
 
              <div className='row'>
                 <div className='col-3'>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <Link class="nav-link" aria-current="page" to="/">Home</Link>
+                <ul className="nav flex-column">
+                    <li className="nav-item">
+                        <Link className="nav-link" aria-current="page" to="/">Home</Link>
                     </li>
-                    <li class="nav-item">
-                         <Link class="nav-link" to="/products">Products</Link>
+                    <li className="nav-item">
+                         <Link className="nav-link" to="/products">Products</Link>
                     </li>
-                    <li class="nav-item">
-                         <Link class="nav-link" to="/add-product">Save</Link>
+                    <li className="nav-item">
+                         <Link className="nav-link" to="/add-product">Add Product</Link>
                     </li>
                 </ul>
                   
@@ -34,6 +34,7 @@ const Home = () => {
                         <Route path="/" element={<Welcome/>}/>
                         <Route path="products" element={<ProductList/>}/>
                         <Route path="add-product" element={<ProductForm/>}/>
+                        <Route path="add-product/:pid" element={<ProductForm/>}/>
                         <Route path="login" element={<Login/>}/>
                         <Route path="*" element={<NotFound/>}/>
 

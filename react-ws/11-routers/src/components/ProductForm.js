@@ -3,23 +3,47 @@ import{useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 //import ProductService from '../api-services/ProductService';
 import { useParams } from 'react-router-dom';
-import axios from 'axios'
+import { findProductById, saveProduct, updateProduct } from '../api/ProductService';
 const ProductForm = (props) => {
-  
+
+    const{pid}=useParams();
+    const navigate = useNavigate();
+    console.log(">>> PID:: "+pid);
+
     const{register,handleSubmit,reset,formState:{errors}}=useForm();
     const[product,setProduct]=useState({});
    
   useEffect(()=>{
+
+    if(pid){
+        // edit logic
+        findProductById(pid)
+        .then(resp=>setProduct(resp.data));
+    }else{
+        console.log(">> New");
+    }
    
   },[])
 
     const onSubmit = (product) =>{
-          product = { ...product, 'id':Math.floor(Math.random() * 100) };
-            console.log(product);
-            axios.post('http://localhost:8080/products',product)
-            .then(resp=>{
-                console.log(resp);
-            })
+       
+         if(pid){
+            updateProduct(pid, product);
+            navigate('/products')
+            
+         }else{
+            // save logic
+            product = { ...product, 'id':Math.floor(Math.random() * 100) };
+            console.log(">>> Save mode");
+            saveProduct(product)
+           .then(resp=>{
+              console.log(resp);
+           })
+           navigate('/products')
+         }
+        
+
+         
            // ProductService.addProduct(product)
            // .then(response=>setProduct(response.data))
            
@@ -56,7 +80,7 @@ const ProductForm = (props) => {
                <span>{errors.description && <span>Description is Required</span>}</span>
             </div>
             <div>
-                <button>Save</button>
+                 {pid?<button>Edit</button>:<button>Save</button>}
             </div>
             </form>
         </div>
